@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="864" pageHeight="864" columnWidth="666" leftMargin="113" rightMargin="85" topMargin="113" bottomMargin="85" uuid="60c82117-a2e4-44f0-a0ec-6e5a78c0b6f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="82"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `buku`]]>
+	</queryString>
+	<field name="id_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pengarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="penerbit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tahun" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="0" width="397" height="35" uuid="619275e0-c1c2-4c2b-b013-d8c1550594c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Buku]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="-110" y="21" width="100" height="20" uuid="c6313ea3-f81a-48fc-8d88-06df169eb592"/>
+				<text><![CDATA[id_buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="100" height="20" uuid="b51447b2-370d-4191-bf97-ab2cb376b7e2"/>
+				<text><![CDATA[judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="21" width="100" height="20" uuid="eb7ce436-6682-421a-9c62-33d63743e3e0"/>
+				<text><![CDATA[pengarang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="21" width="100" height="20" uuid="b154b55b-0052-4b40-9bf2-2ca766d49f65"/>
+				<text><![CDATA[penerbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="21" width="78" height="20" uuid="6efa0721-acaf-4ac3-899b-c9077fdac996"/>
+				<text><![CDATA[tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="21" width="73" height="20" uuid="feb0b996-0cb5-41f2-bffd-d37a1987a988"/>
+				<text><![CDATA[jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="21" width="76" height="20" uuid="26486919-356b-4b5d-b4b8-24f5257fcddd"/>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-110" y="26" width="799" height="20" uuid="17b2ac37-318f-4df6-9ee6-5c0873a3a8ea"/>
+				<text><![CDATA[_________________________________________________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-110" y="6" width="799" height="20" uuid="d69ce0be-ad38-42a7-9415-7a9ba6f7cae3"/>
+				<text><![CDATA[_________________________________________________________________________________________________________________________________________]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="-110" y="0" width="100" height="20" uuid="92636246-7934-4c73-a793-c6558cbd8609"/>
+				<textFieldExpression><![CDATA[$F{id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="177" height="20" uuid="ef0a168e-1031-4fc7-bc01-ee8c40191f59"/>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="100" height="20" uuid="de1c215b-e83f-4bf0-9d67-94d916c76dbd"/>
+				<textFieldExpression><![CDATA[$F{pengarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="100" height="20" uuid="f941aacd-d2b4-49b4-b84b-aaeac180cb5c"/>
+				<textFieldExpression><![CDATA[$F{penerbit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy">
+				<reportElement x="408" y="0" width="78" height="20" uuid="fb0574b7-195e-4b6f-86aa-78aa009fc450"/>
+				<textFieldExpression><![CDATA[$F{tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="0" width="73" height="20" uuid="48b0ab88-6587-4a55-ab90-908718486302"/>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="0" width="76" height="20" uuid="625170b8-2bfe-48f1-a5dd-d440ddb08ee0"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

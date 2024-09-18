@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="210" pageHeight="297" columnWidth="170" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fd0b970-8a78-48d6-b804-4d969df5118f">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT detailpem.no_pinjam, detailpem.jumlah, headpin.no_pinjam, headpin.tgl_pinjam, headpin.tgl_kembali, buku.id_buku, buku.judul,anggota.nis, anggota.nama_siswa FROM headpin INNER JOIN detailpem ON headpin.no_pinjam = detailpem.no_pinjam INNER JOIN  buku ON detailpem.id_buku = buku.id_buku INNER JOIN anggota ON headpin.nis=anggota.nis]]>
+	</queryString>
+	<field name="no_pinjam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="FR">
+		<groupExpression><![CDATA[$F{no_pinjam}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="170" height="34" forecolor="#000000" uuid="f2ca47cf-6352-4c12-8e29-385b90022a6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STRUK PEMINJAMAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="72" height="20" forecolor="#000000" uuid="f501d716-0f07-42df-82b0-d8d9beb64fde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[No. Transaksi :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="0" width="98" height="20" forecolor="#000000" uuid="278764ac-a265-45c8-b9fe-bc36ee208661"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="41" y="40" width="31" height="20" forecolor="#000000" uuid="6ca01f5b-8b98-4006-ae9f-70f767ebe62a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NIS   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="40" width="98" height="20" forecolor="#000000" uuid="c5d2f18c-2899-4e4a-beb6-5429d043f0e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="29" y="60" width="43" height="20" forecolor="#000000" uuid="b87ef970-c239-4889-8b19-4448107dbdf6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Nama   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="60" width="98" height="20" forecolor="#000000" uuid="eb55bed4-c48e-4673-9a3d-403d1888fcc1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="20" width="54" height="20" forecolor="#000000" uuid="af6dd4f2-dfe6-4695-8a6b-463849469473"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal   :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="72" y="20" width="98" height="20" uuid="794cf6f7-0868-457c-b64f-1fdcd1f7aa95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="80" width="41" height="22" forecolor="#000000" backcolor="#CCFFFF" uuid="e70f0264-09ed-4196-8d35-0f1225d119d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[ID Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="41" y="80" width="89" height="22" forecolor="#000000" backcolor="#CCFFFF" uuid="850fd798-b25d-458a-9701-d958c5d473aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="130" y="80" width="40" height="22" forecolor="#000000" backcolor="#CCFFFF" uuid="1d8fb778-0f94-4b98-8265-c265049b91d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="41" height="20" forecolor="#000000" uuid="5d7ddd1c-a7a7-4cc6-8416-89e1871049b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="0" width="89" height="20" forecolor="#000000" uuid="68d676dd-9a7a-40ff-ad61-77c97deaf02d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="1" width="40" height="20" forecolor="#000000" uuid="e0b249a4-61f1-477f-abd5-161832d204ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="51" height="14" forecolor="#000000" uuid="9ed3f894-4dcb-474a-a142-8d45909df030"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="7"/>
+				</textElement>
+				<text><![CDATA[Keterangan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="100" height="13" forecolor="#000000" uuid="fc5de71d-a9c7-424d-82b6-e572e0b0cb26"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="7"/>
+				</textElement>
+				<text><![CDATA[Maks. Pinjam 3 Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="130" height="14" forecolor="#000000" uuid="3e21c8c6-e407-42c5-93b9-c8357a5ea60a"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="7"/>
+				</textElement>
+				<text><![CDATA[Denda 1000/buku *lama]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

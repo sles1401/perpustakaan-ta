@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="397" leftMargin="113" rightMargin="85" topMargin="113" bottomMargin="85" uuid="35ce2d96-d557-46cb-b5f9-1fab2510a441">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM `headpin` INNER JOIN detailpem ON headpin.no_pinjam=detailpem.no_pinjam]]>
+	</queryString>
+	<field name="no_pinjam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_petugas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_petugas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="397" height="35" uuid="f8652a3d-23fd-414d-8166-c90370dae47f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Transaksi Peminjaman]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="195" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="4bc26af6-a310-4154-ad14-b0642493b199"/>
+				<textFieldExpression><![CDATA[$F{no_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9fb562d3-eef4-41af-9edb-1335d86acba8"/>
+				<text><![CDATA[Nomor Pinjam	:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="100" y="20" width="100" height="20" uuid="8990a8af-ac24-458f-b1b3-118e3437db70"/>
+				<textFieldExpression><![CDATA[$F{tgl_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20" uuid="2022e076-1422-4924-9dc7-0af9fd262627"/>
+				<text><![CDATA[Tanggal Pinjam	:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="100" y="40" width="100" height="20" uuid="e101601e-696e-44d4-8fe5-80e08baf7af4"/>
+				<textFieldExpression><![CDATA[$F{tgl_kembali}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="98" height="20" uuid="ceeabeea-7f02-49eb-be29-1310af164597"/>
+				<text><![CDATA[Tanggal Kembali	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="0" width="100" height="20" uuid="61d29837-e241-4f19-9245-933588f09d09"/>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="0" width="52" height="20" uuid="40c1d47f-2683-49ab-bad1-cd0726ac423c"/>
+				<text><![CDATA[NIS	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="20" width="100" height="20" uuid="d9fe8003-656d-4690-9ae8-8cc5accbd99f"/>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="20" width="100" height="20" uuid="4fd381dd-fe4b-44c5-bc24-d0b2dc5e8d0e"/>
+				<text><![CDATA[Nama Siswa	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="40" width="100" height="20" uuid="ca54b784-fe84-4a93-a20d-06e2febd8000"/>
+				<textFieldExpression><![CDATA[$F{id_petugas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="40" width="100" height="20" uuid="8e9864d1-78e4-4883-9920-45372304076c"/>
+				<text><![CDATA[ID Petugas	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="60" width="100" height="20" uuid="c476c449-2e72-4589-8526-8a376ca0ee79"/>
+				<textFieldExpression><![CDATA[$F{nama_petugas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="62" width="100" height="20" uuid="737eba35-101a-4e37-8229-b69cc3fe12b8"/>
+				<text><![CDATA[Nama Petugas	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="93" width="100" height="20" uuid="82e74887-7f39-4bb1-a622-6eea978ffbfd"/>
+				<textFieldExpression><![CDATA[$F{id_buku}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="93" width="100" height="20" uuid="cd48eb89-c152-4c46-a464-45eff4882f92"/>
+				<text><![CDATA[ID Buku	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="123" width="213" height="20" uuid="6d3547d4-0674-4cf8-ab96-0523293bc980"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="123" width="100" height="20" uuid="4e82ee0a-c205-47db-912b-d5730f4018f3"/>
+				<text><![CDATA[Judul Buku	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="116" y="154" width="100" height="20" uuid="66a76c73-0c0b-480a-8e87-f638e78f831c"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="154" width="100" height="20" uuid="1a0c0cf4-1a1d-4357-9c30-a5ba481bf179"/>
+				<text><![CDATA[Jumlah	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="174" width="445" height="21" uuid="998c70be-facf-4c68-a6aa-854626e0c1c7"/>
+				<text><![CDATA[_______________________________________________________________________________]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

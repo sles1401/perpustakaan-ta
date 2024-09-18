@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="210" pageHeight="297" columnWidth="170" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e3ac7ddf-e1e4-45d5-9636-d9cf85e410a3">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT pengembalian.no_kembali, pengembalian.tgl_kembali, pengembalian.id_buku, pengembalian.judul, pengembalian.total, pengembalian.nis, pengembalian.nama_siswa FROM anggota INNER JOIN  pengembalian ON anggota.nis = pengembalian.nis INNER JOIN  buku ON pengembalian.id_buku = buku.id_buku INNER JOIN tpetugas ON pengembalian.id_petugas = tpetugas.id_petugas INNER JOIN headpin headpin ON pengembalian.no_pinjam = headpin.no_pinjam]]>
+	</queryString>
+	<field name="no_kembali" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="170" height="22" uuid="3a349763-9954-4525-a871-a72f363ac2af"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Struk Pengembalian]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="73" height="11" uuid="cf632451-1aac-4fe3-9367-83203f415e31"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[No. Transaksi :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="10" width="97" height="11" uuid="22ab3a65-4a1c-4f7e-a669-2cbc460333c0"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_kembali}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="21" width="73" height="10" uuid="42f2967f-e24c-4f6b-9f91-70b68df3b1c4"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Tanggal	    :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="73" y="21" width="97" height="10" uuid="d84aef3e-0d1d-4496-a0da-99b3f38211b3"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_kembali}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="31" width="73" height="10" uuid="9407783d-1f50-46ad-a40c-947e9856e689"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[NIS	    :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="31" width="97" height="10" uuid="d7381318-36c5-4075-b86a-1572302002f2"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="41" width="73" height="10" uuid="6a9463ec-1e35-4ae5-ba37-1ed8b6e734f8"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Nama Siswa   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="41" width="97" height="10" uuid="2e79c39f-bbfc-4667-84dd-b676a1179672"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="61" width="44" height="10" backcolor="#CCFFFF" uuid="7674a4fa-35d1-47f3-adfe-8c8ef9a828d0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[ID Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="44" y="61" width="87" height="10" backcolor="#CCFFFF" uuid="1bf57f11-a1bc-4643-85fd-f28d487cadc9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="131" y="61" width="39" height="10" backcolor="#CCFFFF" uuid="7417d7f6-746c-4bfe-8287-27de1eae48b9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[Denda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="10" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="0" width="44" height="10" uuid="fafdf1d8-6106-45d6-a7a5-ed7542a820f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="87" height="10" uuid="4271b701-01e9-47d9-a90e-1ac5939a91f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="39" height="10" uuid="7922c8b0-955e-45b1-bffc-cfc9eb4d43ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

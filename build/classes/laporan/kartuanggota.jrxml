@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dc552058-7c49-433e-9ae1-1de08dbc2396">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM anggota]]>
+	</queryString>
+	<field name="nis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jurusan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="0" width="100" height="20" uuid="8225d3d9-a0a5-4ee1-aa57-f23d07503ebf"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Perpustakaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="20" width="220" height="20" uuid="5642ce57-2899-4233-8a00-66131015a9bb"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[SMK TI Pembangunan Cimahi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="41" width="100" height="20" uuid="4494ddd9-2b8a-4865-8047-ee155d8a3f6b"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Kartu Anggota]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="40" width="381" height="1" uuid="ddde0837-ff03-4b13-a0cf-549041a6a281"/>
+			</line>
+			<line>
+				<reportElement x="0" y="61" width="381" height="1" uuid="bbae433a-b57b-47b3-80c5-775e7d3aafa1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="123" splitType="Stretch">
+			<textField>
+				<reportElement x="115" y="1" width="100" height="20" uuid="70cdfb19-1e50-493c-9a31-f32515372bdd"/>
+				<textFieldExpression><![CDATA[$F{nis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="32" width="100" height="20" uuid="f05311a9-cd2e-43e2-aef5-12f7a860e0f8"/>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="1" width="100" height="20" uuid="fc9e89e4-4031-4508-99df-6d86d5c0368c"/>
+				<text><![CDATA[NIS	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="32" width="100" height="20" uuid="457aa6d7-e63b-477a-b2e4-7e49674ecd8f"/>
+				<text><![CDATA[Nama	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="64" width="100" height="20" uuid="c51500d3-ad3a-4161-ac40-1521f69f1e21"/>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="64" width="100" height="20" uuid="281f65c6-86c9-4541-8a0d-2bce766d113e"/>
+				<text><![CDATA[Kelas	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="95" width="100" height="20" uuid="b7f0dd19-da19-44e6-a891-aea1012422d3"/>
+				<text><![CDATA[Jurusan	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="95" width="100" height="20" uuid="ac01da1b-843d-43a3-9da7-4ab9da583790"/>
+				<textFieldExpression><![CDATA[$F{jurusan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="118" width="381" height="1" uuid="f7733062-56c4-4bfb-92f6-d143d453754f"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
